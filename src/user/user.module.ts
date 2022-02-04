@@ -8,6 +8,7 @@ import {DatabaseModule} from "../database/database.module";
 @Module({
   // imports: [TypeOrmModule.forFeature([UserEntity])]],
   imports: [DatabaseModule],
+  exports: [UserService],
   controllers: [UserController],
   providers: [
     ...userProviders,
