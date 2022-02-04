@@ -1,4 +1,4 @@
-import {databaseProvider} from "../database.provider";
+import {databaseProvider} from "./database.provider";
 import {Module} from "@nestjs/common";
 
 @Module({
