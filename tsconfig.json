@@ -1,21 +1,18 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "rootDir": "./src",
+    "outDir": "dist",
+    "target": "es6",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
+    "moduleResolution": "node",
+    "esModuleInterop" : true, // Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility.
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "strictPropertyInitialization": false
   }
 }
