@@ -2,6 +2,7 @@ import {JwtService} from '@nestjs/jwt';
 import {Body, Controller, HttpCode, HttpStatus, Post, Res} from "@nestjs/common";
 import {Response} from 'express';
 import {UserService} from "../user/user.service";
+import {Public} from "./public.decorator";
 
 /**
  * Class to handle all Auth's requests
@@ -13,6 +14,7 @@ export class AuthController {
     private readonly userService: UserService
   ) {}
 
+  @Public()
   @Post('login')
   @HttpCode(200)
   async login(
