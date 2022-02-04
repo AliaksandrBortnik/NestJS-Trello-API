@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {Inject, Injectable} from '@nestjs/common';
 import bcryptjs from "bcryptjs";
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -8,7 +8,10 @@ import {config} from "../common/config";
 
 @Injectable()
 export class UserService {
-  constructor(private readonly userRepo: UserRepository) {}
+  constructor(
+    @Inject('USER_REPOSITORY')
+    private readonly userRepo: UserRepository
+  ) {}
 
   /**
    * Get all users
