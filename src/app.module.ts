@@ -6,6 +6,8 @@ import {BoardModule} from "./board/board.module";
 import {TaskModule} from "./task/task.module";
 import {DatabaseModule} from "./database/database.module";
 import {AuthModule} from "./auth/auth.module";
+import {APP_FILTER} from "@nestjs/core";
+import {AllExceptionsFilter} from "./all-exception.filter";
 
 @Module({
   imports: [
@@ -16,6 +18,9 @@ import {AuthModule} from "./auth/auth.module";
     TaskModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    { provide: APP_FILTER, useClass: AllExceptionsFilter },
+    AppService
+  ],
 })
 export class AppModule {}
